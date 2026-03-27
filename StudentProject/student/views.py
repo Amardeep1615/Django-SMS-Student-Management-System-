@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
+from .models import Student
 
 # Create your views here.
 def  home(request):
@@ -8,6 +9,7 @@ def  home(request):
     <p> This is a Student App </p>
     <h2>Welcome to Student Management Application</h2>'''
     return render (request,'student/home.html')
+
 
 
     
