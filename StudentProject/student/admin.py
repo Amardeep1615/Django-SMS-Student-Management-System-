@@ -10,4 +10,3 @@ class StudentAdmin(admin.ModelAdmin):
     search_fields = ["student_id", "student_name","student_branch"]
     list_filter = ["student_email","student_branch"]
 
-    
