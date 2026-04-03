@@ -22,4 +22,6 @@ urlpatterns = [
     path('app/',include('student.urls')),
     path('app/',include('api.urls')),
     
+
+    
 ]

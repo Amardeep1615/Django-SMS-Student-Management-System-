@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'employees',
+    'blogs',
+    'django_filters',
+
+
 ]
 
 MIDDLEWARE = [
@@ -126,3 +130,13 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = 'static/'
+
+REST_FRAMEWORK = {
+    # 'DEFAULT_PAGINATION_CLASS' : 'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_PAGINATION_CLASS' : 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE' : 4,
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    
+    
+}
+    

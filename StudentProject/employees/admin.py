@@ -8,3 +8,5 @@ class EmployeeAdmin(admin.ModelAdmin):
     list_filter = ['emp_name','designation']
     search_fields = ['emp_name','designation']
     list_per_page = 10
+
+    
