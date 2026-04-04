@@ -14,6 +14,9 @@ from blogs.models import Blog,Comment
 from blogs.serializers import BlogSerializer,CommentSerializer
 from .paginators import CustomPagination
 from employees.filters import EmployeeFilter
+from rest_framework.filters import SearchFilter
+from rest_framework.filters import OrderingFilter
+
 # Create your views here.
 
 # def apiv1 (request):
@@ -198,6 +201,10 @@ class EmployeeViewSet(viewsets.ModelViewSet):
 class BlogsView(generics.ListCreateAPIView):
    queryset = Blog.objects.all()
    serializer_class = BlogSerializer
+   filter_backends = [SearchFilter,OrderingFilter]
+   search_fields = ['blog_title','blog_body']
+   ordering_fields = ['id','blog_title']
+      
 
 class CommentsView(generics.ListCreateAPIView):
    queryset = Comment.objects.all()
@@ -208,6 +215,15 @@ class BlogDetailView(generics.RetrieveUpdateDestroyAPIView):
    queryset = Blog.objects.all()
    serializer_class= BlogSerializer
    lookup_field = 'id'
+  
+
+  
+   
+
+
+
+
+
 
 class CommentDetailView(generics.RetrieveUpdateDestroyAPIView):
    queryset = Comment.objects.all()

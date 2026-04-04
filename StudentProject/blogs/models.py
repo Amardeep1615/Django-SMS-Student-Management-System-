@@ -8,6 +8,7 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.blog_title
+    
 
 
 class Comment(models.Model):
